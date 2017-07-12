@@ -1,0 +1,11 @@
+[Unit]
+Description=IBM WebSphere DMGR
+After=network.target syslog.target
+
+[Service]
+Type=forking
+ExecStart=/opt/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/startManager.sh
+ExecStop=/opt/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/stopManager.sh -username admin -password admin
+
+[Install]
+WantedBy=multi-user.target
